@@ -7,10 +7,7 @@ import lk.ijse.gdse72.springboot_deployement.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/customer")
@@ -19,7 +16,7 @@ public class CustomerController {
 
     private final CustomerService customerService;
 
-    @GetMapping
+    @PostMapping
     public ResponseEntity<APIResponse<String>> getCustomer(@RequestBody CustomerDTO customerDTO) {
         customerService.saveCustomer(customerDTO);
 
